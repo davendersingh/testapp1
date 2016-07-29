@@ -1,0 +1,115 @@
+@charset "UTF-8";
+
+$color: #337ab7;
+
+body{
+  background-color: floralwhite;
+}
+
+.animated {
+  -webkit-animation-duration: 1s;
+  animation-duration: 1s;
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;
+}
+
+@-webkit-keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+.fadeIn {
+  -webkit-animation-name: fadeIn;
+  animation-name: fadeIn;
+}
+
+
+
+
+@-webkit-keyframes fadeOut {
+  from {
+    opacity: 1;
+  }
+
+  to {
+    opacity: 0;
+  }
+}
+
+@keyframes fadeOut {
+  from {
+    opacity: 1;
+  }
+
+  to {
+    opacity: 0;
+  }
+}
+
+.fadeOut {
+  -webkit-animation-name: fadeOut;
+  animation-name: fadeOut;
+}
+
+.sidebar-list{
+  a{
+    display: inline-block;
+    width: 100%;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-left: 10px;
+    &:hover{
+      text-decoration: none;
+      background-color: lightgray;
+    }
+    &:visited{
+      text-decoration: none;
+    }
+    &:focus{
+      text-decoration: none;
+    }
+    &.active{
+      background-color: #337ab7;
+      color: white;
+    }
+  }
+}
+
+.ng-enter{
+  @extend .animated;
+  @extend .fadeIn;
+  -webkit-animation-duration: 2s;
+  animation-duration: 2s;
+}
+
+//.ng-leave{
+//  @extend .animated;
+//  @extend .fadeOut;
+//}
+
+.navbar{
+  background-color: $color;
+}
+
+.navbar-brand{
+  color: white !important;
+}
+
+h2{
+  color: $color;
+}
