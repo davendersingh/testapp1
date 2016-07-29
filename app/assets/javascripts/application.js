@@ -20,3 +20,8 @@
 //= require calendar
 //= require full_calendar
 //= require base
+
+$(document).on('click', '.toggle-sidebar', function(e) {
+    e.preventDefault();
+    $("#wrapper").toggleClass("toggled");
+});

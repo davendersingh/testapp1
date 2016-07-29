@@ -16,19 +16,30 @@ app.config ['$locationProvider', '$routeProvider', ($locationProvider, $routePro
 
 ]
 
-app.controller 'SideBarController', ['$rootScope', ($rootScope)->
-
-  @currentLink = null
-
+app.run ['$rootScope', ($rootScope)->
   $rootScope.$on '$routeChangeStart', (event, next, current)=>
     if next.$$route.originalPath == '/'
-      @currentLink = 'home'
+      $rootScope.currentLink = 'Home'
     else if next.$$route.originalPath == '/profile'
-      @currentLink = 'profile'
+      $rootScope.currentLink = 'Profile'
     else if next.$$route.originalPath == '/calendar'
-      @currentLink = 'calendar'
+      $rootScope.currentLink = 'Calendar'
     else
-      @currentLink = null
+      $rootScope.currentLink = null
+]
+
+app.controller 'SideBarController', ['$rootScope', ($rootScope)->
+
+  $rootScope.$on '$routeChangeStart', ()=>
+    @currentLink = $rootScope.currentLink
+
+  return undefined
+]
+
+app.controller 'TopBarController', ['$rootScope', ($rootScope)->
+
+  $rootScope.$on '$routeChangeStart', ()=>
+    @currentLink = $rootScope.currentLink || ''
 
   return undefined
 ]
