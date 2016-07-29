@@ -6,6 +6,8 @@ app.config ['$locationProvider', '$routeProvider', ($locationProvider, $routePro
     templateUrl: '/templates'
   }).when('/profile',{
     templateUrl: '/templates/profile'
+    controller: 'ProfileController'
+    controllerAs: 'ctrl'
   }).when('/calendar', {
     templateUrl: '/templates/calendar'
   }).otherwise({
@@ -40,6 +42,32 @@ app.controller 'TopBarController', ['$rootScope', ($rootScope)->
 
   $rootScope.$on '$routeChangeStart', ()=>
     @currentLink = $rootScope.currentLink || ''
+
+  return undefined
+]
+
+app.controller 'ProfileController', ['$http', ($http)->
+
+  @profile = {}
+
+  $http.get('/profiles').success(
+    (data)=>
+      @profile = data
+  )
+
+  @save = ->
+    $http.post('/profiles', {profile: {
+      first_name: @profile.first_name
+      last_name: @profile.last_name
+      email: @profile.email
+    }}).success(
+      ->
+        alert 'Successfully saved'
+    ).error(
+      (errors)->
+        if errors[0]
+          alert "ERROR: #{errors[0]}"
+    )
 
   return undefined
 ]
