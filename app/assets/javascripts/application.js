@@ -12,4 +12,11 @@
 //
 //= require jquery
 //= require jquery_ujs
+//= require bootstrap
+//= require angular
+//= require angular-route
+//= require angular-animate
+//= require moment
+//= require calendar
+//= require full_calendar
 //= require base

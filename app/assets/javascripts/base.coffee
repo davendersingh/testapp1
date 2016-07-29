@@ -1,4 +1,4 @@
-app = angular.module 'app', ['ngRoute', 'ngAnimate']
+app = angular.module 'app', ['ngRoute', 'ngAnimate', 'ui.calendar']
 
 app.config ['$locationProvider', '$routeProvider', ($locationProvider, $routeProvider)->
 
