@@ -251,3 +251,169 @@ Status = 200 , Body = Empty
 ```
 GET /iplacex/companies.json
 ```
+
+Example response
+
+```
+{
+  "companies": [
+    {
+      "id": 3,
+      "hubspot_company_id": 417830268,
+      "created_at": "2017-03-27T05:58:19.000Z",
+      "updated_at": "2017-03-27T09:43:43.000Z",
+      "country": "United States",
+      "webhook": "4",
+      "city": "Palo Alto",
+      "num_associated_contacts": "1",
+      "timezone": "America/Los_Angeles",
+      "facebook_company_page": "https://facebook.com/zinier",
+      "createdate": "1490160769247",
+      "description": "ZINIER is a cloud-based platform helping enterprises efficiently track and manage ground operations and communicate effectively with a large, dispersed workforce.",
+      "hs_analytics_last_timestamp": "1490188468231",
+      "hs_analytics_num_visits": "16",
+      "linkedin_company_page": "https://www.linkedin.com/company/zinier-inc",
+      "recent_conversion_event_name": "Online Carreras Técnicas Técnico en Logística | Iplacex: Solicita llamado",
+      "hs_analytics_last_visit_timestamp": "1490188468231",
+      "hubspot_owner_id": "17899873",
+      "hs_analytics_source": "DIRECT_TRAFFIC",
+      "num_contacted_notes": "6",
+      "founded_year": "2014",
+      "action": "new_presentation_visit",
+      "hs_analytics_num_page_views": "24",
+      "state": "CA",
+      "contact_first_name": "Domingo Barros",
+      "linkedinbio": "ZINIER is a cloud-based platform helping enterprises efficiently track and manage ground operations and communicate effectively with a large, dispersed workforce.",
+      "notes_next_activity_date": "",
+      "zip": "94304",
+      "notes_last_updated": "1485476381513",
+      "website": "zinier.com",
+      "address": "2627 Hanover Street",
+      "hs_analytics_first_visit_timestamp": "1484781269986",
+      "hs_analytics_first_timestamp": "1484781269986",
+      "first_conversion_date": "1484785411888",
+      "engagements_last_meeting_booked": "",
+      "first_contact_createdate": "1484785411888",
+      "twitterhandle": "zinierinc",
+      "hs_lastmodifieddate": "1490607819183",
+      "hubspot_owner_assigneddate": "1490160769247",
+      "notes_last_contacted": "1485493200000",
+      "num_conversion_events": "1",
+      "domain": "zinier.com",
+      "is_public": "false",
+      "name": "ZINIER, INC.",
+      "recent_conversion_date": "1484785411888",
+      "hs_analytics_source_data_2": "",
+      "hs_analytics_source_data_1": "",
+      "first_conversion_event_name": "Online Carreras Técnicas Técnico en Logística | Iplacex: Solicita llamado",
+      "num_notes": "7",
+      "zinier_village": "Las Condes",
+      "zinier_contact_name": "Domingo Barros",
+      "zinier_street": "callao",
+      "zinier_contact_last_name": "Barros",
+      "zinier_contact_phone": "+1 206 306 3253",
+      "zinier_region": "Region Metropolitana",
+      "zinier_observations": "Cool Company",
+      "zinier_city": "santiago",
+      "latitude": null,
+      "longitude": null
+    }
+  ]
+}
+```
+
+* Use filters to filter by any attribute.
+
+### Update Company ###
+
+```
+PUT /iplacex/companies/<ID>.json
+```
+
+Payload
+
+```
+{
+  "attribute_name": "new_value"
+}
+```
+
+Response
+
+```
+status = 200, body = empty
+```
+
+### GET company ###
+
+Receive one company based on ID
+
+```
+GET /iplacex/companies/<ID>.json
+```
+
+Sample response
+
+```
+{
+      "id": 3,
+      "hubspot_company_id": 417830268,
+      "created_at": "2017-03-27T05:58:19.000Z",
+      "updated_at": "2017-03-27T09:43:43.000Z",
+      "country": "United States",
+      "webhook": "4",
+      "city": "Palo Alto",
+      "num_associated_contacts": "1",
+      "timezone": "America/Los_Angeles",
+      "facebook_company_page": "https://facebook.com/zinier",
+      "createdate": "1490160769247",
+      "description": "ZINIER is a cloud-based platform helping enterprises efficiently track and manage ground operations and communicate effectively with a large, dispersed workforce.",
+      "hs_analytics_last_timestamp": "1490188468231",
+      "hs_analytics_num_visits": "16",
+      "linkedin_company_page": "https://www.linkedin.com/company/zinier-inc",
+      "recent_conversion_event_name": "Online Carreras Técnicas Técnico en Logística | Iplacex: Solicita llamado",
+      "hs_analytics_last_visit_timestamp": "1490188468231",
+      "hubspot_owner_id": "17899873",
+      "hs_analytics_source": "DIRECT_TRAFFIC",
+      "num_contacted_notes": "6",
+      "founded_year": "2014",
+      "action": "new_presentation_visit",
+      "hs_analytics_num_page_views": "24",
+      "state": "CA",
+      "contact_first_name": "Domingo Barros",
+      "linkedinbio": "ZINIER is a cloud-based platform helping enterprises efficiently track and manage ground operations and communicate effectively with a large, dispersed workforce.",
+      "notes_next_activity_date": "",
+      "zip": "94304",
+      "notes_last_updated": "1485476381513",
+      "website": "zinier.com",
+      "address": "2627 Hanover Street",
+      "hs_analytics_first_visit_timestamp": "1484781269986",
+      "hs_analytics_first_timestamp": "1484781269986",
+      "first_conversion_date": "1484785411888",
+      "engagements_last_meeting_booked": "",
+      "first_contact_createdate": "1484785411888",
+      "twitterhandle": "zinierinc",
+      "hs_lastmodifieddate": "1490607819183",
+      "hubspot_owner_assigneddate": "1490160769247",
+      "notes_last_contacted": "1485493200000",
+      "num_conversion_events": "1",
+      "domain": "zinier.com",
+      "is_public": "false",
+      "name": "ZINIER, INC.",
+      "recent_conversion_date": "1484785411888",
+      "hs_analytics_source_data_2": "",
+      "hs_analytics_source_data_1": "",
+      "first_conversion_event_name": "Online Carreras Técnicas Técnico en Logística | Iplacex: Solicita llamado",
+      "num_notes": "7",
+      "zinier_village": "Las Condes",
+      "zinier_contact_name": "Domingo Barros",
+      "zinier_street": "callao",
+      "zinier_contact_last_name": "Barros",
+      "zinier_contact_phone": "+1 206 306 3253",
+      "zinier_region": "Region Metropolitana",
+      "zinier_observations": "Cool Company",
+      "zinier_city": "santiago",
+      "latitude": null,
+      "longitude": null
+    }
+```
