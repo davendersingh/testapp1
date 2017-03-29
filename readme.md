@@ -6,6 +6,11 @@ All api (except previously build apis example Unlock etc) will require following
 * MOBILE-APP-TOKEN *needed in all apis*
 * UDID             *will received after*
 * TOKEN            *will receive after unlock*
+* CLIENT-AGENT     * send "ANDROID" or "IOS"
+
+## Config ##
+
+###  ###
 
 ## Filtering ##
 For any data fetch api filters can be applied on all attributes of entity
@@ -80,6 +85,33 @@ Example: to get all new visits use
 ```
 GET /iplacex/surveys.json?filters[is_new][]=1
 ```
+
+### Possible values for survey_type and process to follow for each ###
+
+If entity_type = "Iplacex::Contact" survey_type can be:
+
+1. new_follow_up_visit
+Start a new follow up visit on contact
+
+2. new_close_visit
+Start a new close contract visit
+
+If entity_type = "Iplacex::Company" survey_type can be:
+
+1. new_presentation_visit
+Start new presentation visit
+
+2. new_agreement_visit
+Start new agreement visit
+
+3. new_difusion_visit
+Start new diffusion visit
+
+4. new_followup_visit
+Start new followup visit
+
+5. new_close_visit
+Start new close contract visit
 
 ### Update Visit ###
 ```
